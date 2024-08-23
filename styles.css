@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;500;700&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Oswald', sans-serif;
+    background-color: #0b0c10;
+    color: #e0e0e0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.game-container {
+    max-width: 700px;
+    text-align: center;
+    padding: 40px;
+    border: 2px solid #1f2833;
+    background-color: #1c1c1c;
+    border-radius: 10px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    position: relative;
+    animation: fadeIn 2s ease-in-out;
+}
+
+h2 {
+    color: #66fcf1;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    animation: glitch 1.5s infinite;
+}
+
+p {
+    font-size: 1.2em;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+button {
+    background-color: #45a29e;
+    color: #0b0c10;
+    border: none;
+    padding: 12px 24px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1.2em;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+    animation: pulse 2s infinite;
+}
+
+button:hover {
+    background-color: #66fcf1;
+    transform: scale(1.1);
+}
+
+.answer-btn {
+    display: block;
+    margin: 15px auto;
+    width: 90%;
+}
+
+.glitch-text {
+    color: #66fcf1;
+    text-shadow: 0 0 5px #0b0c10, 0 0 10px #1f2833;
+    animation: glitch 2s infinite;
+}
+
+.glitch-btn {
+    position: relative;
+    overflow: hidden;
+}
+
+.glitch-btn::before, .glitch-btn::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 200%;
+    height: 100%;
+    background: linear-gradient(to right, transparent 50%, #0b0c10);
+    transition: all 0.4s ease;
+    z-index: 1;
+    transform: translateX(-50%) scaleX(0);
+}
+
+.glitch-btn:hover::before {
+    transform: translateX(-50%) scaleX(1);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        box-shadow: 0 0 10px #45a29e;
+    }
+    50% {
+        box-shadow: 0 0 20px #66fcf1;
+    }
+}
+
+@keyframes glitch {
+    0%, 100% {
+        clip: rect(0, 100%, 0, 0);
+    }
+    20% {
+        clip: rect(10px, 9999px, 80px, 0);
+        transform: skew(0.5deg);
+    }
+    40% {
+        clip: rect(80px, 9999px, 10px, 0);
+        transform: skew(0.5deg);
+    }
+    60% {
+        clip: rect(40px, 9999px, 30px, 0);
+        transform: skew(-0.5deg);
+    }
+    80% {
+        clip: rect(60px, 9999px, 20px, 0);
+        transform: skew(-0.5deg);
+    }
+}

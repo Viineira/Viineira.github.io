@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sombras da Verdade - Capítulo 1</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="narrative" id="narrative">
+            <h2>Capítulo 1: A Chegada</h2>
+            <p>
+                Na escuridão da noite, você chega à cidade de Darkwood, um lugar envolto em mistérios e histórias de terror. 
+                Você foi chamado para investigar uma série de desaparecimentos inexplicáveis. À medida que você avança pelas ruas desertas, 
+                uma névoa espessa começa a cobrir a cidade, e uma sensação inquietante toma conta de você.
+            </p>
+            <button id="start-btn" class="glitch-btn">Continuar</button>
+        </div>
+
+        <div class="question" id="question" style="display:none;">
+            <p class="glitch-text">A névoa ao seu redor começa a se mover de forma estranha, como se tivesse vida própria. Você precisa agir rápido.</p>
+            <p class="glitch-text">O que você faz?</p>
+            <button class="answer-btn glitch-btn" onclick="checkAnswer('correct')">Investigar a névoa</button>
+            <button class="answer-btn glitch-btn" onclick="checkAnswer('wrong')">Correr para o hotel mais próximo</button>
+        </div>
+
+        <div class="result" id="result" style="display:none;">
+            <p id="result-text" class="glitch-text"></p>
+            <button id="next-btn" class="glitch-btn" style="display:none;">Próximo</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
